@@ -15,7 +15,11 @@ namespace Source
 
         public bool CanDestroyed => true;
 
+        public Action OnTrueAnswer;
+        public Action OnFalseAnswer;
+
         private AbackController _abackController;
+
 
         public void Initialize()
         {
@@ -30,6 +34,7 @@ namespace Source
             _abackController.gameObject.SetActive(true);
             DisaableCheckButton();
 
+            _questionShowNumber.text = string.Empty;
             HideUI();
         }
 
@@ -67,11 +72,14 @@ namespace Source
                 }
             }
 
+            _questionShowNumber.text = string.Empty;
             if (isTrueAnw)
             {
-                GameManager.Instance.RestartAback();
-                _questionShowNumber.text = string.Empty;
+                OnTrueAnswer.Invoke();
+                return;
             }
+
+            OnFalseAnswer.Invoke();
         }
 
         public void ShowAnswerMakeNumber(int answer)

@@ -8,6 +8,7 @@ namespace Source
         [SerializeField] private Button _showNumberButton;
         [SerializeField] private Button _makeNumberButton;
         [SerializeField] private Button _settings;
+        [SerializeField] private Button _instruction;
 
         private void Awake()
         {

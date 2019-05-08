@@ -1,4 +1,6 @@
-﻿using Source;
+﻿using AssetsCore;
+using LitJson;
+using Source;
 using Source.Helper;
 using UnityEngine;
 
@@ -10,18 +12,20 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     [SerializeField] private GameObject _abackContainerPref;
     [SerializeField] private GameObject _abackPref;
     [SerializeField] private GameObject _settingsPref;
+    [SerializeField] private GameObject _popupPref;
 
     #endregion
 
     #region PrivateFields
 
     private MainMenuController _mainMenuController;
+    private PopupController _popupController;
     private AbackController _abackController;
     private GameObject _abackContainerGO;
     private GameObject _abackGO;
     private EGameState _gameState;
     private SettingsManager _settingsManager;
-    private GameUIController _gameUICOntroller;
+    private GameUIController _gameUIController;
 
     #endregion
 
@@ -79,6 +83,11 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         GameState = EGameState.IN_MENU;
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveManager.SaveSettings();
+    }
+
     #endregion
 
     #region PublicMethods
@@ -96,9 +105,32 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     private void Initialize()
     {
         SaveManager.LoadSettings();
+        var data = Resources.Load<TextAsset>("Localization").text;
+        var root = JsonMapper.ToObject(data);
+        LoadLocalization(root);
+
         InitializeMainMenu();
         InitializeSettings();
         InitializeAbackContainer();
+        InitializePopup();
+    }
+
+    private void LoadLocalization(JsonData root)
+    {
+        foreach (JsonData data in root["localization"])
+        {
+            var id = data["id"].ToString();
+
+            if (id != Localization.CurrentId)
+            {
+                continue;
+            }
+
+            foreach (var key in data["value"].Keys)
+            {
+                Localization.Set(key, data["value"][key].ToString());
+            }
+        }
     }
 
 
@@ -106,6 +138,13 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     {
         var mainMenuGO = Instantiate(_mainMenuPref);
         _mainMenuController = mainMenuGO.GetComponent<MainMenuController>();
+    }
+
+    private void InitializePopup()
+    {
+        var popupGO = Instantiate(_popupPref);
+        _popupController = popupGO.GetComponent<PopupController>();
+        _popupController.Initialize();
     }
 
     private void InitializeSettings()
@@ -117,7 +156,20 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     private void InitializeAbackContainer()
     {
         _abackContainerGO = Instantiate(_abackContainerPref);
-        _gameUICOntroller = _abackContainerGO.GetComponent<GameUIController>();
+        _gameUIController = _abackContainerGO.GetComponent<GameUIController>();
+
+        _gameUIController.OnTrueAnswer += OnTrueAnswer;
+        _gameUIController.OnFalseAnswer += OnFalseAnswer;
+    }
+
+    private void OnFalseAnswer()
+    {
+        _popupController.ShowFailure();
+    }
+
+    private void OnTrueAnswer()
+    {
+        _popupController.ShowSuccess();
     }
 
     private void ShowAback()
@@ -128,7 +180,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         _abackController = _abackGO.GetComponent<AbackController>();
         _abackController.ColumnCount = Configurations.ColumnCount;
 
-        _gameUICOntroller.Initialize();
+        _gameUIController.Initialize();
         _abackController.Initialize();
     }
 

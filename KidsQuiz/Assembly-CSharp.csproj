@@ -64,9 +64,24 @@
      <Compile Include="Assets\Source\Localization.cs" />
      <Compile Include="Assets\Source\LocalizeText.cs" />
      <Compile Include="Assets\Source\MainMenuController.cs" />
+     <Compile Include="Assets\Source\PopupController.cs" />
      <Compile Include="Assets\Source\SaveManager.cs" />
      <Compile Include="Assets\Source\SettingsManager.cs" />
      <Compile Include="Assets\Source\Singleton.cs" />
+     <Compile Include="Assets\UnityLitJson\Extensions.cs" />
+     <Compile Include="Assets\UnityLitJson\IJsonWrapper.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonAttribute.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonData.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonException.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonMapper.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonMockWrapper.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonReader.cs" />
+     <Compile Include="Assets\UnityLitJson\JsonWriter.cs" />
+     <Compile Include="Assets\UnityLitJson\Lexer.cs" />
+     <Compile Include="Assets\UnityLitJson\ParserToken.cs" />
+     <Compile Include="Assets\UnityLitJson\Platform.cs" />
+     <Compile Include="Assets\UnityLitJson\Unity\UnityTypeBindings.cs" />
+     <Compile Include="Assets\UnityLitJson-Example\JsonExample.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/vladislavbogdanovskij/Documents/MyProjects/Unity/soroban/KidsQuiz/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

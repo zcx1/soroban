@@ -153,7 +153,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 3284873432212832889}
   m_HandleRect: {fileID: 7096895294392990768}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.3
   m_MaxValue: 3
   m_WholeNumbers: 0
   m_Value: 3
@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 3740270915705322773}
   - component: {fileID: 6896595076364271549}
   - component: {fileID: 6132173546474040186}
+  - component: {fileID: 3927220705531326855}
   m_Layer: 5
   m_Name: Lable
   m_TagString: Untagged
@@ -515,7 +516,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0440\u0435\u043C\u044F \u043F\u043E\u043A\u0430\u0437\u0430 "
+  m_Text: Show time
+--- !u!114 &3927220705531326855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866762682338260619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13f3c32efcbb4ccda035778d2e312a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: ShowTime
+  UseList: 1
 --- !u!1 &3182463254636395838
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +599,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33375, y: 0.18800001}
-  m_AnchorMax: {x: 0.6725001, y: 0.35441667}
+  m_AnchorMax: {x: 0.6725001, y: 0.30233338}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1056,6 +1071,7 @@ GameObject:
   - component: {fileID: 5177373012327721679}
   - component: {fileID: 5177373012327721677}
   - component: {fileID: 5177373012327721678}
+  - component: {fileID: 9046114558200135540}
   m_Layer: 5
   m_Name: Lable
   m_TagString: Untagged
@@ -1123,7 +1139,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0420\u044F\u0437\u0440\u044F\u0434 \u0447\u0438\u0441\u043B\u0430"
+  m_Text: Digit number
+--- !u!114 &9046114558200135540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177373012327721672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13f3c32efcbb4ccda035778d2e312a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: DigitNumber
+  UseList: 1
 --- !u!1 &5177373012493992008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1478,7 @@ GameObject:
   - component: {fileID: 2536765577853856202}
   - component: {fileID: 5231669744084180322}
   - component: {fileID: 7406580561825817709}
+  - component: {fileID: 896001808246262659}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -1469,8 +1500,8 @@ RectTransform:
   m_Father: {fileID: 1819930663530539652}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.6848117, y: 1}
+  m_AnchorMin: {x: 0, y: 0.09110782}
+  m_AnchorMax: {x: 0.6848117, y: 0.8177843}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1515,7 +1546,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041C\u0443\u0437\u044B\u043A\u0430"
+  m_Text: Music
+--- !u!114 &896001808246262659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393365547404379196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13f3c32efcbb4ccda035778d2e312a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: Music
+  UseList: 1
 --- !u!1 &5652139876205636090
 GameObject:
   m_ObjectHideFlags: 0

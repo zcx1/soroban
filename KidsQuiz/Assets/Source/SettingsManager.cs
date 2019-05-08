@@ -60,8 +60,8 @@ namespace Source
 
         private void ChangeShowingTime(float value)
         {
-            _timeText.text = Math.Round(value, 2).ToString();
-            Configurations.ShowingTime = (float) Math.Round(value, 2);
+            _timeText.text = Math.Round(value,  1).ToString();
+            Configurations.ShowingTime = (float) Math.Round(value, 1);
         }
 
         private void ChangeMusic(bool value)

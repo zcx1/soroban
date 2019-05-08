@@ -1,0 +1,38 @@
+{
+  "localization": [
+    {
+      "id": "en",
+      "language": "English",
+      "value": {
+        "ShowNumber": "Show number",
+        "MakeNumber": "Make number",
+        "Instruction": "Instruction",
+        "Settings": "Settings",
+        "DigitNumber": "Digit number",
+        "ShowTime": "Show time",
+        "Music": "Music",
+        "TryAgain": "Try again!",
+        "Continue": "Continue",
+        "WellDone": "Well Done!!!",
+        "SomethingWentWrong":"Something went wrong..."
+      }
+    },
+    {
+      "id": "ru",
+      "language": "Русский",
+      "value": {
+        "ShowNumber": "Показать число",
+        "MakeNumber": "Составить число",
+        "Instruction": "Инструкция",
+        "Settings": "Настройки",
+        "DigitNumber": "Разряд числа",
+        "ShowTime": "Время показа",
+        "Music": "Музыка",
+        "TryAgain": "Пробовать снова!",
+        "Continue": "Продолжить",
+        "WellDone": "Молодец!!!",
+        "SomethingWentWrong":"Что-то пошло не так..."
+      }
+    }
+  ]
+}

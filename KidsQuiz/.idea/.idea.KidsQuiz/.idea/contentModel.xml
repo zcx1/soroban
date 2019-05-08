@@ -16,9 +16,30 @@
           <e p="Localization.cs" t="Include" />
           <e p="LocalizeText.cs" t="Include" />
           <e p="MainMenuController.cs" t="Include" />
+          <e p="PopupController.cs" t="Include" />
           <e p="SaveManager.cs" t="Include" />
           <e p="SettingsManager.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
+        </e>
+        <e p="UnityLitJson" t="Include">
+          <e p="Extensions.cs" t="Include" />
+          <e p="IJsonWrapper.cs" t="Include" />
+          <e p="JsonAttribute.cs" t="Include" />
+          <e p="JsonData.cs" t="Include" />
+          <e p="JsonException.cs" t="Include" />
+          <e p="JsonMapper.cs" t="Include" />
+          <e p="JsonMockWrapper.cs" t="Include" />
+          <e p="JsonReader.cs" t="Include" />
+          <e p="JsonWriter.cs" t="Include" />
+          <e p="Lexer.cs" t="Include" />
+          <e p="ParserToken.cs" t="Include" />
+          <e p="Platform.cs" t="Include" />
+          <e p="Unity" t="Include">
+            <e p="UnityTypeBindings.cs" t="Include" />
+          </e>
+        </e>
+        <e p="UnityLitJson-Example" t="Include">
+          <e p="JsonExample.cs" t="Include" />
         </e>
       </e>
       <e p="KidsQuiz.sln" t="IncludeFlat" />
