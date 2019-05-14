@@ -144,7 +144,38 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     {
         var popupGO = Instantiate(_popupPref);
         _popupController = popupGO.GetComponent<PopupController>();
+        _popupController.OnSuccessClick += OnSuccessPopupClick;
+        _popupController.OnFailureClick += OnFailurePupupClick;
         _popupController.Initialize();
+    }
+
+    private void OnFailurePupupClick()
+    {
+        switch (GameState)
+        {
+            case EGameState.IN_SHOW_NUMBER:
+            {
+                _gameUIController.HideUI();
+                _gameUIController.ShowAback();
+                break;
+            }
+
+            case EGameState.IN_MAKE_NUMBER:
+            {
+                _gameUIController.HideAback();
+                break;
+            }
+        }
+
+        _gameUIController.DisableCheckButton();
+        _abackController.ShowAnswer();
+        _popupController.HideFailure();
+    }
+
+    private void OnSuccessPopupClick()
+    {
+        RestartAback();
+        _popupController.HideSuccess();
     }
 
     private void InitializeSettings()

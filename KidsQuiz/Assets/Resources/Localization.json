@@ -4,7 +4,7 @@
       "id": "en",
       "language": "English",
       "value": {
-        "ShowNumber": "Show number",
+        "ShowNumber": "Show number ",
         "MakeNumber": "Make number",
         "Instruction": "Instruction",
         "Settings": "Settings",
@@ -14,7 +14,9 @@
         "TryAgain": "Try again!",
         "Continue": "Continue",
         "WellDone": "Well Done!!!",
-        "SomethingWentWrong":"Something went wrong..."
+        "SomethingWentWrong":"Something went wrong...",
+        "InputNumber":"Input number...",
+        "ShowNumberText":"Show number"
       }
     },
     {
@@ -31,7 +33,9 @@
         "TryAgain": "Пробовать снова!",
         "Continue": "Продолжить",
         "WellDone": "Молодец!!!",
-        "SomethingWentWrong":"Что-то пошло не так..."
+        "SomethingWentWrong":"Что-то пошло не так...",
+        "InputNumber":"Введите число..",
+        "ShowNumberText":"Покажите число "
       }
     }
   ]

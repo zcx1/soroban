@@ -309,6 +309,7 @@
 "Assets/Source/Localization.cs"
 "Assets/Source/LocalizeText.cs"
 "Assets/Source/MainMenuController.cs"
+"Assets/Source/PopupController.cs"
 "Assets/Source/SaveManager.cs"
 "Assets/Source/SettingsManager.cs"
 "Assets/Source/Singleton.cs"

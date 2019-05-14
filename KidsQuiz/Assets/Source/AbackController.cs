@@ -33,7 +33,7 @@ namespace Source
 
         public void Initialize()
         {
-            ShowAnswer();
+            ResetAback();
         }
 
         public void ShowAnswer()
@@ -42,14 +42,12 @@ namespace Source
             {
                 case EGameState.IN_MAKE_NUMBER:
                 {
-                    RegenirationAnwer();
                     GameUIController.Instance.ShowAnswerMakeNumber(_answer);
 
                     break;
                 }
                 case EGameState.IN_SHOW_NUMBER:
                 {
-                    RegenirationAnwer();
                     SpawnColumns();
 
                     break;
@@ -99,6 +97,12 @@ namespace Source
         #endregion
 
         #region PrivateMethods
+
+        private void ResetAback()
+        {
+            RegenirationAnwer();
+            ShowAnswer();
+        }
 
         private void RegenirationAnwer()
         {
