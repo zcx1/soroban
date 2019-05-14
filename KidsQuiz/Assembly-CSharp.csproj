@@ -56,6 +56,7 @@
      <Compile Include="Assets\Source\AbackColumn.cs" />
      <Compile Include="Assets\Source\AbackContainer.cs" />
      <Compile Include="Assets\Source\AbackController.cs" />
+     <Compile Include="Assets\Source\BackgroundController.cs" />
      <Compile Include="Assets\Source\Bone.cs" />
      <Compile Include="Assets\Source\Configurations.cs" />
      <Compile Include="Assets\Source\EGameState.cs" />

@@ -38,6 +38,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         get => _gameState;
         set
         {
+            BackgroundController.Instance.ChangeBackground();
             _gameState = value;
             switch (value)
             {

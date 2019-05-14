@@ -8,6 +8,7 @@
           <e p="AbackColumn.cs" t="Include" />
           <e p="AbackContainer.cs" t="Include" />
           <e p="AbackController.cs" t="Include" />
+          <e p="BackgroundController.cs" t="Include" />
           <e p="Bone.cs" t="Include" />
           <e p="Configurations.cs" t="Include" />
           <e p="EGameState.cs" t="Include" />
