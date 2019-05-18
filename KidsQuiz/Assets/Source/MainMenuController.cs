@@ -20,6 +20,7 @@ namespace Source
             _showNumberButton.onClick.AddListener(ShowNumberAction);
             _makeNumberButton.onClick.AddListener(MakeNumberAction);
             _settings.onClick.AddListener(SettingsAction);
+            _instruction.onClick.AddListener(InstructionsAction);
         }
 
         private void ShowNumberAction()
@@ -35,6 +36,11 @@ namespace Source
         private void SettingsAction()
         {
             GameManager.Instance.GameState = EGameState.IN_SETTINGS;
+        }
+
+        private void InstructionsAction()
+        {
+            GameManager.Instance.GameState = EGameState.IN_INSTRUCTIONS;
         }
     }
 }

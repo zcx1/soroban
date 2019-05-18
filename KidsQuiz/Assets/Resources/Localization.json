@@ -14,9 +14,18 @@
         "TryAgain": "Try again!",
         "Continue": "Continue",
         "WellDone": "Well Done!!!",
-        "SomethingWentWrong":"Something went wrong...",
-        "InputNumber":"Input number...",
-        "ShowNumberText":"Show number"
+        "SomethingWentWrong": "Something went wrong...",
+        "InputNumber": "Input number...",
+        "ShowNumberText": "Show number",
+        "Title_I": "Set of rules for working on abacus / sorrow accounts",
+        "T1_I": "Device account",
+        "T2_I": "Accounts always start counting on the first right row. This is a rank of units. The second row is the rank of tens, the third row is the rank of hundreds, the fourth row is the rank of thousands, etc. ",
+        "T3_I": "The numbers on the accounts",
+        "HeavenlyBones_I": "heavenly bones",
+        "Rows_I": "rows",
+        "Frame_I": "frame",
+        "EarthBones_I": "earth bones",
+        "Strap_I": "strap"
       }
     },
     {
@@ -33,9 +42,18 @@
         "TryAgain": "Пробовать снова!",
         "Continue": "Продолжить",
         "WellDone": "Молодец!!!",
-        "SomethingWentWrong":"Что-то пошло не так...",
-        "InputNumber":"Введите число..",
-        "ShowNumberText":"Покажите число "
+        "SomethingWentWrong": "Что-то пошло не так...",
+        "InputNumber": "Введите число..",
+        "ShowNumberText": "Покажите число ",
+        "Title_I": "Свод правил для работы на счетах абакус/соробан",
+        "T1_I": "Устройство счет",
+        "T2_I": "На счетах всегда начинают считать на первом правом ряду. Это разряд единиц. Второй ряд – разряд десятков, третий ряд – разряд сотен, четвертый ряд – разряд тысяч и т.д.",
+        "T3_I": "Цифры на счетах",
+        "HeavenlyBones_I": "небесные косточки",
+        "Rows_I": "ряды",
+        "Frame_I": "рамка",
+        "EarthBones_I": "земные косточки",
+        "Strap_I": "планка"
       }
     }
   ]

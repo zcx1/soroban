@@ -14,6 +14,7 @@
           <e p="EGameState.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GameUIController.cs" t="Include" />
+          <e p="InstructionsController.cs" t="Include" />
           <e p="Localization.cs" t="Include" />
           <e p="LocalizeText.cs" t="Include" />
           <e p="MainMenuController.cs" t="Include" />

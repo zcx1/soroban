@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     [SerializeField] private GameObject _abackPref;
     [SerializeField] private GameObject _settingsPref;
     [SerializeField] private GameObject _popupPref;
+    [SerializeField] private GameObject _instructionPrefs;
 
     #endregion
 
@@ -26,6 +27,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     private EGameState _gameState;
     private SettingsManager _settingsManager;
     private GameUIController _gameUIController;
+    private InstructionsController _instructionsController;
 
     #endregion
 
@@ -46,6 +48,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
                 {
                     _mainMenuController.gameObject.SetActive(true);
                     _settingsManager.gameObject.SetActive(false);
+                    _instructionsController.gameObject.SetActive(false);
                     HideAback();
                     break;
                 }
@@ -68,6 +71,12 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
                     _mainMenuController.gameObject.SetActive(false);
                     _settingsManager.gameObject.SetActive(true);
                     _settingsManager.Initialize();
+                    break;
+                }
+                case EGameState.IN_INSTRUCTIONS:
+                {
+                    _mainMenuController.gameObject.SetActive(false);
+                    _instructionsController.gameObject.SetActive(true);
                     break;
                 }
             }
@@ -113,6 +122,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         InitializeMainMenu();
         InitializeSettings();
         InitializeAbackContainer();
+        InitializeInstructions();
         InitializePopup();
     }
 
@@ -148,6 +158,13 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         _popupController.OnSuccessClick += OnSuccessPopupClick;
         _popupController.OnFailureClick += OnFailurePupupClick;
         _popupController.Initialize();
+    }
+
+    private void InitializeInstructions()
+    {
+        var instructionsGO = Instantiate(_instructionPrefs);
+        _instructionsController = instructionsGO.GetComponent<InstructionsController>();
+        _instructionsController.Initialize();
     }
 
     private void OnFailurePupupClick()

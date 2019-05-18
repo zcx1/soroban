@@ -151,6 +151,8 @@ MonoBehaviour:
     type: 3}
   _popupPref: {fileID: 6266104435635970731, guid: 8438830e48f2046baacd3dec5ea0e1eb,
     type: 3}
+  _instructionPrefs: {fileID: 4155841784075499370, guid: 5ffe5cd2bd9a241e39d3acde989ace93,
+    type: 3}
 --- !u!4 &20169316
 Transform:
   m_ObjectHideFlags: 0
