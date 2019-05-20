@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Source.Helper
+namespace Source.Helpers
 {
     public interface IDestroyableSingleton
     {

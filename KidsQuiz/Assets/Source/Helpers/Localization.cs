@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
-using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using AssetsCore;
 using LitJson;
+using UnityEngine;
 
-// TODO: Maybe refactor
-namespace AssetsCore
+namespace Source.Helpers
 {
+// TODO: Maybe refactor
     public class Localization
     {
         public static string Current
@@ -169,17 +168,17 @@ namespace AssetsCore
             return asset;
         }
     }
-}
 
-public static class LocalizationUtil
-{
-    public static string Tr(this string key, string defaultValue = null)
+    public static class LocalizationUtil
     {
-        return Localization.Get(key, defaultValue);
-    }
+        public static string Tr(this string key, string defaultValue = null)
+        {
+            return Localization.Get(key, defaultValue);
+        }
 
-    public static string Tr(this string self, string defaultValue, params object[] args)
-    {
-        return string.Format(Localization.Get(self, defaultValue), args);
+        public static string Tr(this string self, string defaultValue, params object[] args)
+        {
+            return string.Format(Localization.Get(self, defaultValue), args);
+        }
     }
 }

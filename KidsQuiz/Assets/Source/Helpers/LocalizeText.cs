@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AssetsCore
+namespace Source.Helpers
 {
     [ExecuteInEditMode]
     public class LocalizeText : MonoBehaviour
