@@ -57,20 +57,21 @@
     <Compile Include="Assets\Source\AbackColumn.cs" />
     <Compile Include="Assets\Source\AbackContainer.cs" />
     <Compile Include="Assets\Source\AbackController.cs" />
+    <Compile Include="Assets\Source\AudioManager.cs" />
     <Compile Include="Assets\Source\BackgroundController.cs" />
     <Compile Include="Assets\Source\Bone.cs" />
     <Compile Include="Assets\Source\Configurations.cs" />
     <Compile Include="Assets\Source\EGameState.cs" />
     <Compile Include="Assets\Source\GameManager.cs" />
     <Compile Include="Assets\Source\GameUIController.cs" />
+    <Compile Include="Assets\Source\Helpers\Localization.cs" />
+    <Compile Include="Assets\Source\Helpers\LocalizeText.cs" />
+    <Compile Include="Assets\Source\Helpers\Singleton.cs" />
     <Compile Include="Assets\Source\InstructionsController.cs" />
-    <Compile Include="Assets\Source\Localization.cs" />
-    <Compile Include="Assets\Source\LocalizeText.cs" />
     <Compile Include="Assets\Source\MainMenuController.cs" />
     <Compile Include="Assets\Source\PopupController.cs" />
     <Compile Include="Assets\Source\SaveManager.cs" />
     <Compile Include="Assets\Source\SettingsManager.cs" />
-    <Compile Include="Assets\Source\Singleton.cs" />
     <Compile Include="Assets\UnityLitJson\Extensions.cs" />
     <Compile Include="Assets\UnityLitJson\IJsonWrapper.cs" />
     <Compile Include="Assets\UnityLitJson\JsonAttribute.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\UnityLitJson\Platform.cs" />
     <Compile Include="Assets\UnityLitJson\Unity\UnityTypeBindings.cs" />
     <Compile Include="Assets\UnityLitJson-Example\JsonExample.cs" />
+    <None Include="Assets\Casual Puzzle World Sounds - Free Package\assetexplain.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/vladislavbogdanovskij/Documents/MyProjects/Unity/soroban/KidsQuiz/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -664,6 +666,16 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>/Applications/Unity/Hub/Editor/2018.3.3f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>/Applications/Unity/Hub/Editor/2018.3.3f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2018.3.3f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

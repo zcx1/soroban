@@ -67,6 +67,7 @@ namespace Source
         private void ChangeMusic(bool value)
         {
             Configurations.IsMusic = value;
+            AudioManager.Instance.Initialize();
         }
 
         private void BackButtonAction()

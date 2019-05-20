@@ -1,7 +1,6 @@
-﻿using AssetsCore;
-using LitJson;
+﻿using LitJson;
 using Source;
-using Source.Helper;
+using Source.Helpers;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>, IDestroyableSingleton
@@ -28,6 +27,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     private SettingsManager _settingsManager;
     private GameUIController _gameUIController;
     private InstructionsController _instructionsController;
+    private int _winCounter = 0;
 
     #endregion
 
@@ -124,6 +124,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         InitializeAbackContainer();
         InitializeInstructions();
         InitializePopup();
+        AudioManager.Instance.Initialize();
     }
 
     private void LoadLocalization(JsonData root)
@@ -190,9 +191,21 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         _popupController.HideFailure();
     }
 
+    //TODO Need added correctly logic for ads
     private void OnSuccessPopupClick()
     {
-        RestartAback();
+        _winCounter++;
+        if (_winCounter == 3)
+        {
+            Debug.Log("Реклама!!!");
+            Invoke("RestartAback", 5f);
+            _winCounter = 0;
+        }
+        else
+        {
+            RestartAback();
+        }
+
         _popupController.HideSuccess();
     }
 

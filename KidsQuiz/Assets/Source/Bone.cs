@@ -35,6 +35,8 @@ namespace Source
         {
             if (!IsInteractive)
                 return;
+            
+            AudioManager.Instance.PlayBoneSound();
             if (CheckDefaultPosition)
             {
                 SetActivePosition();
