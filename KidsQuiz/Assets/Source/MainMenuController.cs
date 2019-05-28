@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Source.Helpers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Source
@@ -40,7 +41,8 @@ namespace Source
 
         private void InstructionsAction()
         {
-            GameManager.Instance.GameState = EGameState.IN_INSTRUCTIONS;
+            AdsManager.Instance.ShowInterstitial();
+            //GameManager.Instance.GameState = EGameState.IN_INSTRUCTIONS;
         }
     }
 }
