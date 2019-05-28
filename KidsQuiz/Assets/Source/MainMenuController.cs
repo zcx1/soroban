@@ -41,8 +41,7 @@ namespace Source
 
         private void InstructionsAction()
         {
-            AdsManager.Instance.ShowInterstitial();
-            //GameManager.Instance.GameState = EGameState.IN_INSTRUCTIONS;
+            GameManager.Instance.GameState = EGameState.IN_INSTRUCTIONS;
         }
     }
 }
