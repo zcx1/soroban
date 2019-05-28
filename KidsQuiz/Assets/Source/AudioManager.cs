@@ -43,6 +43,13 @@ namespace Source
             _boneAudioSource.Play();
         }
 
+        public void MuteAudios()
+        {
+            _bgAudioSource.mute = true;
+            _boneAudioSource.mute = true;
+            CancelInvoke("PlayNext");
+        }
+
         #endregion
 
         #region PrivateMethods
@@ -54,12 +61,6 @@ namespace Source
             PlayNext();
         }
 
-        private void MuteAudios()
-        {
-            _bgAudioSource.mute = true;
-            _boneAudioSource.mute = true;
-            CancelInvoke("PlayNext");
-        }
 
         private void PlayNext()
         {

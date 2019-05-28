@@ -2,6 +2,7 @@
 using Source;
 using Source.Helpers;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class GameManager : Singleton<GameManager>, IDestroyableSingleton
 {
@@ -27,7 +28,7 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     private SettingsManager _settingsManager;
     private GameUIController _gameUIController;
     private InstructionsController _instructionsController;
-    private int _winCounter = 0;
+    private int _winCounter = -1;
 
     #endregion
 
@@ -100,20 +101,12 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
 
     #endregion
 
-    #region PublicMethods
-
-    public void RestartAback()
-    {
-        HideAback();
-        ShowAback();
-    }
-
-    #endregion
-
     #region PrivateMethods
 
     private void Initialize()
     {
+        InitializePermissions();
+        InitializeAds();
         SaveManager.LoadSettings();
         var data = Resources.Load<TextAsset>("Localization").text;
         var root = JsonMapper.ToObject(data);
@@ -125,6 +118,11 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         InitializeInstructions();
         InitializePopup();
         AudioManager.Instance.Initialize();
+    }
+
+    private void InitializeAds()
+    {
+        AdsManager.Instance.Initialize();
     }
 
     private void LoadLocalization(JsonData root)
@@ -145,6 +143,16 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         }
     }
 
+    private void InitializePermissions()
+    {
+        if (Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+        {
+        }
+        else
+        {
+            Permission.RequestUserPermission(Permission.FineLocation);
+        }
+    }
 
     private void InitializeMainMenu()
     {
@@ -191,21 +199,9 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
         _popupController.HideFailure();
     }
 
-    //TODO Need added correctly logic for ads
     private void OnSuccessPopupClick()
     {
-        _winCounter++;
-        if (_winCounter == 3)
-        {
-            Debug.Log("Реклама!!!");
-            Invoke("RestartAback", 5f);
-            _winCounter = 0;
-        }
-        else
-        {
-            RestartAback();
-        }
-
+        RestartAback();
         _popupController.HideSuccess();
     }
 
@@ -236,6 +232,13 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
 
     private void ShowAback()
     {
+        _winCounter++;
+        if (_winCounter == 3)
+        {
+            AdsManager.Instance.ShowInterstitial();
+            _winCounter = -1;
+        }
+
         _abackContainerGO.SetActive(true);
 
         _abackGO = Instantiate(_abackPref, AbackContainer.Instance.AbackSpawnPoint);
@@ -250,6 +253,12 @@ public class GameManager : Singleton<GameManager>, IDestroyableSingleton
     {
         _abackContainerGO.SetActive(false);
         Destroy(_abackGO);
+    }
+
+    private void RestartAback()
+    {
+        HideAback();
+        ShowAback();
     }
 
     #endregion
